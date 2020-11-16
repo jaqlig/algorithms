@@ -55,8 +55,8 @@ def postfixToInfix(input):
             
         else:
             cache = stack.pop()
-            operacja = "( " + stack.pop() + " " + i + " " + cache + " )"
-            stack.append(operacja)
+            operation = "( " + stack.pop() + " " + i + " " + cache + " )"
+            stack.append(operation)
 
     for i in stack:
         output += i + " "
