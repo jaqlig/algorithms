@@ -1,33 +1,32 @@
 import string 
 alphabet = list(string.ascii_lowercase)
 
-def alpha(a, place, turns):
+def alpha(character, turns):
     
-    while((place + turns) > 24):
-        turns -= 24
-    while((place + turns) < -24):
-        turns += 24
-    if (alphabet.index(a) + turns) > 24:
-        return alphabet[alphabet.index(a) - turns]
+    while((turns) > 25):
+        turns -= 26
+    while((turns) < -25):
+        turns += 26
+    if (alphabet.index(character) + turns) > 25:
+        return alphabet[alphabet.index(character) + turns - 26]
     else:
-        return alphabet[alphabet.index(a) + turns]
+        return alphabet[alphabet.index(character) + turns]
 
-def crypt(input, turns):
+
+def code(input, turns):
     coded = ""
     x = 0
-    for a in input:
+    for character in input:
         if input[x] != " ":
-            coded += alpha(a, x, turns)
+            coded += alpha(character, turns)
         else:
             coded += " "
         x += 1
-    
     return coded
 
+# Example:
 
-# Example: 
-
-input = "abcdefghijk"
-turns = 7
-
-print(crypt(input, turns))
+input = "abcdefghijklmnopqrstuvwxyz"
+turns = 2
+print(input, "->")
+print(code(input, turns))
