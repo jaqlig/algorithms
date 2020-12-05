@@ -56,6 +56,7 @@ class Dijkstra:
             print(self.dist[i], '', end = '')
         print("- dist")
             
+# Example:
 
 graph =  [
             [0,3,0,3,5],
