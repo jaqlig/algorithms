@@ -42,8 +42,8 @@ def genetic(function, args, generations, left, right, n, mutation_chance, crosso
 
         # mutation
         for i in range(args):
-            mutation_a = uniform(-(abs(left)+abs(right)), abs(left)+abs(right)) * 1/100
-            mutation_b = uniform(-(abs(left)+abs(right)), abs(left)+abs(right)) * 1/100
+            mutation_a = uniform(-(abs(left)+abs(right)), abs(left)+abs(right)) * 1/10
+            mutation_b = uniform(-(abs(left)+abs(right)), abs(left)+abs(right)) * 1/10
 
             if random() <= mutation_chance:
                 ind_a[i] += mutation_a
